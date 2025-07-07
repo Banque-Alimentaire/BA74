@@ -52,7 +52,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[45.53441096296273,5.235840274294109],[46.763056058094044,8.908877605019928]]);
+        }).fitBounds([[46.02866393769128,5.818691797764036],[46.33565609168257,6.736951130445491]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -665,7 +665,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/Restoducoeur_10.svg',
-            iconSize: [24.319999999999986, 24.319999999999986]
+            iconSize: [24.32, 24.32]
         }),
                 interactive: true,
             }
@@ -719,7 +719,7 @@
         rotationOrigin: 'center center',
         icon: L.icon({
             iconUrl: 'markers/SecoursPopulaire_11.svg',
-            iconSize: [27.35999999999998, 27.35999999999998]
+            iconSize: [27.36, 27.36]
         }),
                 interactive: true,
             }
@@ -769,7 +769,7 @@
         function style_AssociationspartenairesBA74_12_0() {
             return {
                 pane: 'pane_AssociationspartenairesBA74_12',
-                radius: 5.599999999999998,
+                radius: 5.6,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -827,7 +827,7 @@
         function style_CCAS_13_0() {
             return {
                 pane: 'pane_CCAS_13',
-                radius: 5.599999999999998,
+                radius: 5.6,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -885,7 +885,7 @@
         function style_CroixRouge_14_0() {
             return {
                 pane: 'pane_CroixRouge_14',
-                radius: 5.599999999999998,
+                radius: 5.6,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -940,7 +940,7 @@
         function style_BA74_15_0() {
             return {
                 pane: 'pane_BA74_15',
-                radius: 4.800000000000001,
+                radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -949,7 +949,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,0.0)',
+                fillColor: 'rgba(31,120,180,1.0)',
                 interactive: true,
             }
         }
@@ -1069,19 +1069,6 @@
             }  
         });       
         setBounds();
-        var i = 0;
-        layer_BA74_15.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((exp_label_BA74_15_eval_expression(context) !== null?String('<div style="color: #000000; font-size: 9pt; font-weight: bold; font-family: \'Bahnschrift SemiBold\', sans-serif;">' + exp_label_BA74_15_eval_expression(context)) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BA74_15'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
         resetLabels([layer_BA74_15]);
         map.on("zoomend", function(){
             resetLabels([layer_BA74_15]);
